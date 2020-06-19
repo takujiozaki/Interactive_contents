@@ -1,3 +1,4 @@
+//配列からSELECT BOXを作成
 $(document).ready(function(){
     courses.forEach(function(course){
         assert("ck", course);

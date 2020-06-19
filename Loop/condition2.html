@@ -23,7 +23,7 @@
                 <button type="submit" class="btn btn-primary mb-2">確認</button>
             </div>
         </form>
-        <div class="alert alert-primary">学年は<span></span></div>
+        <div class="alert alert-primary"><span></span></div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,16 +45,18 @@
 
                 //学年を判定する
                 let str = '';
-                if(age >= 6){
-                    str　= "小学生です"
-                }else if(age >= 13){
-                    str = "中学生です"
+                if(age > 18){
+                    str = "大人";
                 }else if(age >= 16){
-                    str = "高校生です";
+                    str = "高校生";
+                }else if(age >= 13){
+                    str = "中学生";
+                }else if(age >= 6){
+                    str = "小学生";
                 }else{
-                    str = "大人です";
+                    str = "未就学児";
                 }
-                $('span').text(str);
+                $('span').text("あなたは"+str+"です");
 
                 return false;
             });
