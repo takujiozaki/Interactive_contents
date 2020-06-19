@@ -22,7 +22,7 @@ const recommendStar = function(rank){
     for(let i = 0; i < rank; i++){
         stars += "★";
     }
-    return stars;
+    return `<span class="text-info">${stars}</span>`;
 }
 
 const showLimited = function(limited){
