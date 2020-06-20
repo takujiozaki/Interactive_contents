@@ -6,3 +6,8 @@ navbarと時計
 if構文の復習とWeb表現の実習
 ### 20200620
 Jsonデータの基礎とWeb活用
+
+
+## Author
+Takuji Ozaki
+https://twitter.com/takujiozaki
