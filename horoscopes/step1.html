@@ -37,27 +37,39 @@
             const horoscopeArr = data.horoscope[currentdate];
             horoscopeArr.forEach(function(horoscope){
                 //console.log(horoscope.sign);
-                $('#horoscope').append(`<p class="alert alert-primary">${horoscope.sign}:${horoscope.content}<p>`);                
+                $('#horoscope').append(`<p class="alert alert-primary">${horoscope.sign}:${horoscope.content}<p>`);
+                //画像名の取得
+                console.log(getImageName(horoscope.sign));           
             });
             //日付を表示
             $('#currentDay').html(`<h1 class="h4">${currentdate}の星占い</h1>`);
-
         });
+
         //画像データ
         const horoscopeData = [
-            {'牡羊座': 'aries'},
-            {'牡牛座': 'taurus'},
-            {'双子座': 'gemini'},
-            {'蟹座': 'cancer'},
-            {'獅子座': 'leo'},
-            {'乙女座': 'vergo'},
-            {'天秤座': 'libra'},
-            {'蠍座': 'scorpio'},
-            {'射手座': 'sagittarus'},
-            {'山羊座': 'capricorn'},
-            {'水瓶座': 'aquarius'},
-            {'魚座': 'pisces'}
+            {sign:'牡羊座',scope:'aries'},
+            {sign:'牡牛座',scope:'taurus'},
+            {sign:'双子座',scope:'gemini'},
+            {sign:'蟹座',scope:'cancer'},
+            {sign:'獅子座',scope:'leo'},
+            {sign:'乙女座',scope:'vergo'},
+            {sign:'天秤座',scope:'libra'},
+            {sign:'蠍座',scope:'scorpio'},
+            {sign:'射手座',scope:'sagittarus'},
+            {sign:'山羊座',scope:'capricorn'},
+            {sign:'水瓶座',scope:'aquarius'},
+            {sign:'魚座',scope:'pisces'}
         ];
+        function getImageName(sign){
+            let imageName = "";
+            horoscopeData.forEach(function(data){
+                if(data.sign == sign){
+                    //console.log(data.sign)
+                    imageName = data.scope + ".png";
+                }
+            });
+            return imageName;
+        }
     </script>
 </body>
 </html>
