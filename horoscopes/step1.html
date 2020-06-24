@@ -28,15 +28,12 @@
         注意点はjQueryのCDNでjquery-3.5.1.min.jsを指定してください。(slimでは使えない)
         */
         $.getJSON('data.json',function(data){
-            //段階的に確認する
-            //console.log(data);
-            //console.log(data.horoscope);
             //日時を取得
             const currentdate = Object.keys(data.horoscope)[0];
-            //console.log(data.horoscope[currentdate]);
+            //指定日の占いを配列に格納
             const horoscopeArr = data.horoscope[currentdate];
             horoscopeArr.forEach(function(horoscope){
-                //console.log(horoscope.sign);
+                //星座名
                 $('#horoscope').append(`<p class="alert alert-primary">${horoscope.sign}:${horoscope.content}<p>`);
                 //画像名の取得
                 console.log(getImageName(horoscope.sign));           
@@ -52,7 +49,7 @@
             {sign:'双子座',scope:'gemini'},
             {sign:'蟹座',scope:'cancer'},
             {sign:'獅子座',scope:'leo'},
-            {sign:'乙女座',scope:'vergo'},
+            {sign:'乙女座',scope:'virgo'},
             {sign:'天秤座',scope:'libra'},
             {sign:'蠍座',scope:'scorpio'},
             {sign:'射手座',scope:'sagittarus'},
