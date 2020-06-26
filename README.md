@@ -16,7 +16,7 @@ Jsonデータの基礎とWeb活用
 DreamWeaverのLive Preview機能、
 Visual Studio Code ではOpen In Default Browserの機能拡張を加えてください。
 
-### 20200527
+### 20200627
 選択式の例を追加
 
 
