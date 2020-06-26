@@ -13,6 +13,10 @@
   <body>
     <div class="container">
         <div id="currentDay"></div>
+        <div id="my_horoscope">
+            <div class="row" id="choiceBtns">
+            </div>
+        </div>
         <div id="horoscope"></div>
     </div>
     
@@ -34,9 +38,9 @@
             const horoscopeArr = data.horoscope[currentdate];
             horoscopeArr.forEach(function(horoscope){
                 //星座名
-                $('#horoscope').append(`<div class="media">
+                $('#horoscope').append(`<div class="media d-none" id="${getImageName(horoscope.sign)}Div"">
                                             <div class="media-left mr-3">
-                                                <img src="images/${getImageName(horoscope.sign)}">
+                                                <img src="images/${getImageName(horoscope.sign)}.png">
                                             </div>
                                             <div class="media-body">
                                                 <h2 class="media-heading h5">${horoscope.sign}</h2>
@@ -52,7 +56,31 @@
             $('#currentDay').html(`<h1 class="h4">${currentdate}の星占い</h1>`);
         });
 
-        //画像データ
+        $(document).ready(function(){
+            //選択用ボタンを生成
+            horoscopeData.forEach(function(horoscope){
+                $('#choiceBtns').append(`<div class="col-sm-2 mb-2"><button class="btn btn-outline-dark showHoroscope" id="${horoscope.scope}">${horoscope.sign}</button></div>`);
+            });
+
+            //現在の選択肢を入れておく変数
+            let currentChoice = "";
+
+            //ボタンがクリックされたら
+            $('button').click(function(){
+                //現在表示されているDIVタグを非表示に(空だったら何もしない)
+                if(currentChoice != ""){
+                    $("#"+currentChoice+"Div").addClass('d-none');
+                }
+                //ボタンのIDを取得
+                const myScope = $(this).attr('id');
+                //現在の選択肢を更新
+                currentChoice = myScope;
+                //適応するDIVタグから非常時を削除
+                $("#"+myScope+"Div").removeClass('d-none');
+            });
+        });
+
+        //データ
         const horoscopeData = [
             {sign:'牡羊座', scope:'aries',term:'3/21〜4/19'},
             {sign:'牡牛座', scope:'taurus', term:'4/20〜5/20'},
@@ -72,7 +100,7 @@
             horoscopeData.forEach(function(data){
                 if(data.sign == sign){
                     //console.log(data.sign)
-                    imageName = data.scope + ".png";
+                    imageName = data.scope;
                 }
             });
             return imageName;
