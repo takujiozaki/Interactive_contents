@@ -20,7 +20,13 @@ Visual Studio Code ではOpen In Default Browserの機能拡張を加えてく�
 選択式の例を追加
 エラー訂正(isokawa)
 
+### 20200628
+製作例を提示
+JavaScriptをなるべく少なくし、複雑な構文は避けました。
+horoscope_easy
+
 
 ## Author
 Takuji Ozaki
+https://takujiozaki.com/
 https://twitter.com/takujiozaki
