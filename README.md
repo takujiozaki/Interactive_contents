@@ -18,6 +18,7 @@ Visual Studio Code ではOpen In Default Browserの機能拡張を加えてく�
 
 ### 20200627
 選択式の例を追加
+エラー訂正(isokawa)
 
 
 ## Author
