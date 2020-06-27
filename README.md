@@ -11,22 +11,27 @@ if構文の復習とWeb表現の実習
 Jsonデータの基礎とWeb活用
 
 ### 20200625
-外部Jsonデータの活用
+外部Jsonデータの活用  
 実行確認にはLocal Serverが必要です。
-DreamWeaverのLive Preview機能、
-Visual Studio Code ではOpen In Default Browserの機能拡張を加えてください。
+
+DreamWeaverのLive Preview機能  
+Visual Studio CodeOpen In Default Browserの機能拡張を加えてください。
 
 ### 20200627
-選択式の例を追加
+選択式の例を追加  
 エラー訂正(isokawa)
 
 ### 20200628
-製作例を提示
+製作例を提示  
 JavaScriptをなるべく少なくし、複雑な構文は避けました。
+
 horoscope_easy
+
+### 動作例
+https://officetkj.sakura.ne.jp/interactive_contents/
 
 
 ## Author
-Takuji Ozaki
-https://takujiozaki.com/
+Takuji Ozaki  
+https://takujiozaki.com/  
 https://twitter.com/takujiozaki

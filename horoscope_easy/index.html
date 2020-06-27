@@ -92,6 +92,8 @@
         //HTMLが読み込まれたら
         $(document).ready(function(){
             let currentDiv = "";
+            //jQueryを使うと画像をボタンに出来ます。
+            //↓画像をクリックされたらfunction()に書かれた内容を実行
             $('img').click(function(){
                 //クリックしたイメージのIDを取得
                 const targetId = $(this).attr('id');
