@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JqueryとURLパラメーター</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        const arg = new Object;
+        url = location.search.substring(1).split('&');
+
+        for (let i = 0; url[i]; i++) {
+            const k = url[i].split('=');
+            arg[k[0]] = k[1];
+        }
+
+        const scope = arg.scope;
+        console.log(scope);
+    </script>
+</body>
+
+</html>
