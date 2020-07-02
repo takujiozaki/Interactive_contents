@@ -21,8 +21,8 @@
             arg[k[0]] = k[1];
         }
 
-        const scope = arg.scope;
-        console.log(decodeURI（scope));
+        const scope = decodeURI(arg.scope);
+        console.log(scope == "双子座");
     </script>
 </body>
 
