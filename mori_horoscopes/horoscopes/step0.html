@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>HoroScope</title>
+  </head>
+  <body>
+	      <!--操作エリア-->
+    <div class="container">
+        <h1 class="h5" id="title"></h1>
+        <div class="row">
+            <div class="col-sm-4 col-md-2">
+                <img src="images/ohituziza.png" alt="" class="img-fluid" id="ohituziza">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/oushiza.png" alt="" class="img-fluid" id="oushiza">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/futagoza.png" alt="" class="img-fluid" id="gemini">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/kaniza.png" alt="" class="img-fluid" id="cancer">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/shishiza.png" alt="" class="img-fluid" id="leo">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/otomeza.png" alt="" class="img-fluid" id="virgo">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/tennbinza.png" alt="" class="img-fluid" id="libra">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/sasoriza.png" alt="" class="img-fluid" id="scorpio">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/iteza.png" alt="" class="img-fluid" id="sagittarus">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/yagiza.png" alt="" class="img-fluid" id="capricorn">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/mizugameza.png" alt="" class="img-fluid" id="aquarius">
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <img src="images/uoza.png" alt="" class="img-fluid" id="pisces">
+            </div>
+        </div>
+    </div>
+	  
+	     <!--表示エリア-->
+    <div class="container mt-5">
+        <div id="horoscopes"></div>
+    </div>
+    
+   <!-- <footer class="footer">
+        <div class="container">
+          <span class="text-muted">powerd by <a href="http://jugemkey.jp/api/">JugemKey</a></span>
+          <span class="text-muted"><a href="http://www.tarim.co.jp/">原宿占い館 塔里木</a></span>-->
+<!--        </div>
+    </footer>-->
+
+    
+	  
+	  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        /*
+        JSONデータを読み込むjQueryの$.getJSONメソッドを使用
+        注意点はjQueryのCDNでjquery-3.5.1.min.jsを指定してください。(slimでは使えない)なのでslimって入ってたらhttps://code.jquery.com/から借りてくる。
+		minifiedってところを右クリックしてリンクをコピー。今回22行目にslimってあったからその一文を貼り替えする。
+        */
+		
+		$.getJSON('0625.json',function(data){
+			const currentdate = Object.keys(data.horoscope)[0];//Object.keysはデータのホロスコープのキーをとってこいという指示。
+			console.log(currentdate);//jsonデータの中に入っている日付をとってこいという指示
+			console.log(data.horoscope[currentdate]);
+			const horoscopeArray = data.horoscope[currentdate];
+			horoscopeArray.forEach(function(horoscope){
+				//console.log(horoscope.sign);
+				//console.log(horoscope.content);
+				//console.log(horoscope.item);
+                /*画像が出なかったのは拡張子(.png)をつける場所に問題があったため*/
+				$('#horoscopes').append(`<p class="d-none" id="${getImageName(horoscope.sign)}Div"><img src="images/${getImageName(horoscope.sign)}.png" class="w-25">${horoscope.sign}:${horoscope.content}<br>今日のLUCKY ITEM:${horoscope.item}<br>今日のLUCKY COLOR:${horoscope.color}
+				<br>総合運:${showStar(horoscope.total)}<br>仕事運:${showStar(horoscope.job)}<br>金運:${showStar(horoscope.money)}</p>`);
+			});
+			$('#currentDay').text(currentdate);
+		});
+		
+		//recommendの評価を星に変える方法
+		const showStar=function(recommend){
+			let str = "";
+			if(recommend == 5){
+				str = "★★★★★"
+			}else if(recommend== 4){
+				str = "★★★★";
+			}else{
+				str ="★★★"
+			}
+			return str;//何かと置き換えてくださいという指示（これがないと★にならない）
+		}
+		   //HTMLが読み込まれたら
+        $(document).ready(function(){
+            //現在表示されている占い
+            let currentDiv = "";
+            $('img').click(function(){
+                //クリックしたイメージのIDを取得
+                const targetId = $(this).attr('id');
+				//console.log(targetId)
+                
+                //占いを表示
+                $('#'+currentDiv+"Div").addClass("d-none");//前回表示されている占いにclass="d-none"を加える
+                $('#'+targetId+"Div").removeClass("d-none");//今回選択された占いからclass="d-none"を削除する
+                //前回表示された占いを入れ替える
+                currentDiv = targetId;
+                
+            });
+        });
+		
+		  //関数
+        //画像ファイル名を取得
+		function getImageName(sign){
+			let imagename = "";
+			switch(sign){
+				case "牡羊座":
+                    imagename = "ohituziza";
+					break;
+				case "牡牛座":
+                    imagename ="oushiza";
+					break;
+				case "ふたご座":
+                    imagename ="futagoza";
+					break;
+				case "かに座":
+                    imagename ="kaniza";
+					break;
+				case "しし座":
+                    imagename ="sisiza";
+					break;
+				case "乙女座":
+                    imagename ="otomeza";
+					break;
+				case "てんびん座":
+					break;
+					imagename ="tennbinza";
+				case "さそり座":
+                    imagename ="sasoriza";
+					break;
+				case "いて座":
+                    imagename ="iteza";
+					break;
+				case "やぎ座":
+                    imagename ="yagiza";
+					break;
+				case "水瓶座":
+                    imagename ="mizugameza";
+					break;
+				case "うお座":
+                    imagename ="uoza";
+					break;
+			}
+			return imagename;
+		}
+		
+		
+    </script>
+</body>
+</html>
