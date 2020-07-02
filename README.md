@@ -31,7 +31,7 @@ horoscope_easy
 https://officetkj.sakura.ne.jp/interactive_contents/
 
 ###　課題提出
-動作確認ができる状態のファイル
+動作確認ができる状態のファイル  
 公開している場合はサイトのURLを提出してください。
 
 ## Author
