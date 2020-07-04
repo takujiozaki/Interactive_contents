@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="css/style.css"	1 rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	 <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"> 
+
+    <title>HoroScope</title>
+  </head>
+  <body>
+	<div class="container">
+		  
+		<div class="row">
+			<div class="col-12">
+				<h1 class="title">Today's Daily Horoscope</h1> 
+				<div id="currentDay"></div>
+			</div>
+			
+<!--カード１を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="aries">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-aries"></div>
+
+						<div class="card-body" id="card-body-aries"></div>
+
+						<div class="footer" id="footer1-aries"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-aries"></div>
+						<div class="content">
+							<div class="main" id="main-aries"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-aries"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード１ここまで-->
+<!--カード２を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="taurus">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-taurus"></div>
+
+						<div class="card-body" id="card-body-taurus"></div>
+
+						<div class="footer" id="footer1-taurus"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-taurus"></div>
+						<div class="content">
+							<div class="main" id="main-taurus"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-taurus"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード２ここまで-->
+<!--カード３を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="gemini">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-gemini"></div>
+
+						<div class="card-body" id="card-body-gemini"></div>
+
+						<div class="footer" id="footer1-gemini"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-gemini"></div>
+						<div class="content">
+							<div class="main" id="main-gemini"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-gemini"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード３ここまで-->
+<!--カード４を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="cancer">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div  class="seiza-img" id="seiza-img-cancer"></div>
+
+						<div class="card-body" id="card-body-cancer"></div>
+
+						<div class="footer" id="footer1-cancer"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-cancer"></div>
+						<div class="content">
+							<div class="main" id="main-cancer"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-cancer"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード４ここまで-->
+<!--カード５を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="leo">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-leo"></div>
+
+						<div class="card-body" id="card-body-leo"></div>
+
+						<div class="footer" id="footer1-leo"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-leo"></div>
+						<div class="content">
+							<div class="main" id="main-leo"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-leo"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード５ここまで-->
+<!--カード６を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="virgo">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-virgo"></div>
+
+						<div class="card-body" id="card-body-virgo"></div>
+
+						<div class="footer" id="footer1-virgo"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-virgo"></div>
+						<div class="content">
+							<div class="main" id="main-virgo"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-virgo"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード６ここまで-->
+<!--カード７を作る-->
+			<div class="col-md-4 col-sm-6">
+				<div class="card is-surface" id="libra">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-libra"></div>
+
+						<div class="card-body" id="card-body-libra"></div>
+
+						<div class="footer" id="footer1-libra"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-libra"></div>
+						<div class="content">
+							<div class="main" id="main-libra"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-libra"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード７ここまで-->
+<!--カード８を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="scorpio">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-scorpio"></div>
+
+						<div class="card-body" id="card-body-scorpio"></div>
+
+						<div class="footer" id="footer1-scorpio"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-scorpio"></div>
+						<div class="content">
+							<div class="main" id="main-scorpio"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-scorpio"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード８ここまで-->
+<!--カード９を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="sagittarus">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-sagittarus"></div>
+
+						<div class="card-body" id="card-body-sagittarus"></div>
+
+						<div class="footer" id="footer1-sagittarus"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-sagittarus"></div>
+						<div class="content">
+							<div class="main" id="main-sagittarus"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-sagittarus"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード９ここまで-->
+<!--カード10を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="capricorn">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-capricorn"></div>
+
+						<div class="card-body" id="card-body-capricorn"></div>
+
+						<div class="footer" id="footer1-capricorn"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-capricorn"></div>
+						<div class="content">
+							<div class="main" id="main-capricorn"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-capricorn"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード10ここまで-->
+<!--カード11を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="aquarius">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-aquarius"></div>
+
+						<div class="card-body" id="card-body-aquarius"></div>
+
+						<div class="footer" id="footer1-aquarius"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-aquarius"></div>
+						<div class="content">
+							<div class="main" id="main-aquarius"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-aquarius"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード11ここまで-->
+<!--カード12を作る-->
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="card is-surface" id="pisces">
+<!--ここからカード表面-->
+					<div class="front">
+						<div class="cover"></div>
+						<div class="seiza-img" id="seiza-img-pisces"></div>
+
+						<div class="card-body" id="card-body-pisces"></div>
+
+						<div class="footer" id="footer1-pisces"></div>
+<!--表面ここまで --></div> <!--front 閉じる -->
+<!--ここからカード裏面-->
+					<div class="back">
+						<div class="header" id="header-pisces"></div>
+						<div class="content">
+							<div class="main" id="main-pisces"></div>			                         
+						</div><!--content 閉じる -->
+						<div class="footer" id="footer2-pisces"></div>
+<!-- 裏面ここまで --></div> <!-- back閉じる --> 
+				</div> <!--	"card is-surf"閉じる　-->
+			</div><!-- col-lg-4 col-md-4 col-sm-6 col-xs-6 閉じる-->
+<!--カード12ここまで-->
+		</div><!-- "row"閉じる-->
+	</div><!-- "container"閉じる -->
+	  
+	
+    
+    
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	  <script src="js/script2.js"></script>
+	  
+<!--
+	  <script>
+  $(function() {
+    $('.btn').on('click', function() {
+        $('.card').toggleClass('is-surface').toggleClass('is-reverse');
+    });
+  });
+	  </script>
+-->
+
+</body>
+</html>
