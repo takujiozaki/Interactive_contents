@@ -39,6 +39,10 @@ horoscope_easy
 動作を修正(morimoto-horoscope)  
 ボタンにIDを設定して、クリックされたボタンのID名からターゲットのカードを指定する方法に変更しました。  
 
+### 20200705
+調整(morimoto-horoscope)  
+PCブラウザでの動作不安定を解消  
+
 ### 動作例
 https://officetkj.sakura.ne.jp/interactive_contents/
 
