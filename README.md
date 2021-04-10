@@ -3,13 +3,12 @@
 
 ### 2021/04/10
 #### 講座オリエンテーション
-- https://github.com/takujiozaki/info_architect/blob/master/pdf/Web%E5%9F%BA%E7%A4%8E.pdf
-- https://github.com/takujiozaki/info_architect/blob/master/pdf/css_box_design.pdf
-- https://github.com/takujiozaki/info_architect/blob/master/pdf/css_center_layout.pdf
-- https://github.com/takujiozaki/info_architect/blob/master/pdf/flexbox_cheatsheet.pdf
+- [Web基礎](https://github.com/takujiozaki/info_architect/blob/master/pdf/Web%E5%9F%BA%E7%A4%8E.pdf)
+- [CSS BOX DESIGN](https://github.com/takujiozaki/info_architect/blob/master/pdf/css_box_design.pdf)
+- [FLEX BOX](https://github.com/takujiozaki/info_architect/blob/master/pdf/flexbox_cheatsheet.pdf)
 #### HTML/CSS スキルチェック
-- センターレイアウト
-- レスポンシブの基本
+- [センターレイアウト](https://github.com/takujiozaki/info_architect/blob/master/pdf/css_center_layout.pdf)
+- [レスポンシブの基本](https://github.com/takujiozaki/info_architect/blob/master/pdf/responsive_web_design.pdf)
 
 ### 2021/04/14
 #### 基本のWebページ制作演習
