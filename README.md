@@ -4,6 +4,9 @@
 ### 2021/04/10
 #### 講座オリエンテーション
 - https://github.com/takujiozaki/info_architect/blob/master/pdf/Web%E5%9F%BA%E7%A4%8E.pdf
+- https://github.com/takujiozaki/info_architect/blob/master/pdf/css_box_design.pdf
+- https://github.com/takujiozaki/info_architect/blob/master/pdf/css_center_layout.pdf
+- https://github.com/takujiozaki/info_architect/blob/master/pdf/flexbox_cheatsheet.pdf
 #### HTML/CSS スキルチェック
 - センターレイアウト
 - レスポンシブの基本
