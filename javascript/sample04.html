@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript基礎</title>
+</head>
+
+<body>
+    <h1>JavaScriptの書き方</h1>
+    <p>JavaScriptと配列</p>
+<script>
+//複数のデータをひとまとまりで表す
+const jyanken = ['グー','チョキ','パー'];
+//グーを取得
+document.write(jyanken[0]);
+//チョキを取得
+document.write(jyanken[1]);
+
+//計算結果も代入可能
+const number = 98 - 96;
+document.write(jyanken[number]);
+
+//constは再代入不可ですが、要素は入れ替え可能
+jyanken[0] = "Gu";
+document.write(jyanken[0]);
+
+const signal = ['赤','黄色','青'];
+
+</script>
+</body>
+</html>

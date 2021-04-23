@@ -26,7 +26,11 @@ https://getbootstrap.jp/docs/4.3/getting-started/introduction/
 
 ### 2021/04/21
 #### JavaScript実習  
-- 変数、配列、条件分岐、繰り返し
+- 変数、配列
+
+### 2021/04/24
+#### JavaScript実習  
+- 条件分岐、繰り返し
 
 
 ### 課題提出

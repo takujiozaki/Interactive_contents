@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript基本</title>
+</head>
+
+<body>
+    <h1>JavaScriptの書き方</h1>
+    <p>JavaScriptと変数</p>
+<script>
+//変数
+a = "創造社";
+b = "デザイン専門学校";
+c = a + b;
+document.write(c);
+document.write(a + b);
+
+//変数と計算
+a = 100;
+b = 50;
+c = a + b;
+document.write(c);
+
+//変数と型
+b = "山田";
+c = a + b;
+document.write(c);
+
+//変数と修飾詞(const or let)
+//constは再代入できない
+const name = "山田";
+//name = "加藤";//errorになる
+
+//letは再代入OK
+let car = "toyota";
+car = "honda";
+
+//var(なるべく使わない)
+var animal = "dog";
+animal = "cat";
+
+</script>
+</body>
+</html>
