@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScriptの書き方</h1>
+    <h2>プログラムからランダムに画像を呼び出す</h2>
+    <div>
+        <img src="" alt="" id="keyvisual">
+    </div>
+    <script>
+        //プログラムの中で乱数を生成する(1未満の乱数)
+        console.log("乱数の生成:"+Math.random());
+        //最大値を指定する
+        console.log("最大値の指定:"+Math.random()*6);
+        //プログラムの中でサイコロを振る(1から6までのランダムに数字を生成する)
+        const dice = Math.floor(Math.random() * 6)+1;
+        console.log("サイコロを振る:"+dice);
+        //サイコロの目が偶数ならimg1、奇数ならimg2を表示する
+        let imageName = '';
+        if(dice%2){//0ならflase、1ならture
+            imageName = 'images/img1.jpg';
+        }else{
+            imageName = 'images/img2.jpg';
+        }
+        console.log(imageName);
+        const image = document.querySelector("#keyvisual");
+        image.setAttribute('src',imageName);
+    </script>
+</body>
+</html>

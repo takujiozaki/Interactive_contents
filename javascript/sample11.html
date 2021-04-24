@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>JavaScript基本</title>
 <style>
-	#currentDate{
+	.holiday{
 		color:red;
 	}
 </style>
@@ -12,8 +12,8 @@
 
 <body>
 	<h1>JavaScriptの書き方</h1>
-	<h2>日付と時間(jQuery)</h2>
-<p id="currentDate">現在の時間</p>
+	<h2>日付と時間</h2>
+	<p id="currentDate">現在の時間</p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 //現在の日付を取得
@@ -26,6 +26,7 @@ const month = current.getMonth();
 const date = current.getDate();
 //曜日
 const weekday = current.getDay();
+console.log(weekday);
 
 //曜日の配列
 const weekdays = ["日","月","火","水","木","金","土"];
@@ -35,11 +36,25 @@ const hour = current.getHours();
 const minute = current.getMinutes();
 const second = current.getSeconds();
 
-const now = year + '/' + doubleDegit(month+1)+ '/' +doubleDegit(date) + weekdays[weekday] + doubleDegit(hour) + ':' + doubleDegit(minute) + ':' + doubleDegit(second);
+const now = year + '/' + doubleDegit(month+1)+ '/' +doubleDegit(date) +'('+ weekdays[weekday] +')'+ doubleDegit(hour) + ':' + doubleDegit(minute) + ':' + doubleDegit(second);
 
-//document.write(now);
-//document.querySelector('#currentDate').innerHTML = now;
-$("#currentDate").text(now);
+//JavaScript
+const today = document.querySelector('#currentDate');
+today.innerHTML = now;
+if(weekday == 0 || weekday == 6){//日曜日又は土曜日の時
+	today.classList.add('holiday');
+}
+
+
+//jQueryの場合
+// const today = $('#currentDate');
+// today.text(now);
+// if(weekday == 0 || weekday == 6){//日曜日又は土曜日の時
+// 	today.addClass('holiday');
+// }
+
+
+//二桁の調整
 function doubleDegit(val){
 	return ("0" + val).slice(-2);
 }

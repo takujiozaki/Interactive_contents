@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript基本</title>
+<style>
+	.holiday{
+		color:red;
+	}
+</style>
+</head>
+
+<body>
+	<h1>JavaScriptの書き方</h1>
+	<h2>ジャンケン</h2>
+	<p id="PC"></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+const jyanken = ['グー','チョキ','パー'];
+const choice = Math.floor(Math.random() * 3);
+// const hand = document.querySelector('#PC');
+// hand.innerHTML = jyanken[choice];
+
+//jQueryの場合
+const hand = $('#PC');
+hand.text(jyanken[choice]);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基本</title>
+</head>
+<body>
+    <h1>JavaScriptの書き方</h1>
+    <h2>計算と演算子</h2>
+    <script>
+        //足し算をする
+        console.log("足し算:"+(1+1));
+        //足し算をする(文字列の連結)
+        console.log("文字列の連結:"+1+1);
+        //引き算をする
+        console.log("引き算:"+(10-1));
+        //NaN(計算しようとして出来なかった場合)
+        console.log("NaNの例:"+10-1);
+        //掛け算をする
+        console.log("掛け算:"+2*3);
+        
+        //割り算をする
+        console.log("割り算:"+6/3);
+        //割り算をする
+        console.log("商が少数の割り算:"+5/3);
+        //あまり残
+        console.log("あまりを求める:"+3%2);
+
+        //条件
+        let a = 100;
+        let b = 50;
+        //比較演算子
+        console.log(a == b);
+        console.log(a - b == b);
+        console.log(a > b);
+        console.log(a + 1 >= a );
+
+        //論理演算子(AND)
+        console.log(true && true);//trueになる
+        console.log(true && false);//falseになる
+        console.log(false && false);//falseになる
+
+        //論理演算子(OR)
+        console.log(true || true);//trueになる
+        console.log(true || false);//trueになる
+        console.log(false || false);//falseになる
+        
+        //論理演算子(NOT)
+        console.log(!true);//falseになる
+        console.log(!false);//trueになる
+
+        //例
+        console.log( a > b || a == b );
+    </script>
+</body>
+</html>
