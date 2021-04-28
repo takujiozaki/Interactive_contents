@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>JavaScript基本|jQuery</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>jQuery</h1>
+        <p>jQueryの利点</p>
+        <ul>
+            <li>コードを短く書ける</li>
+            <li>直感的な文法</li>
+            <li>ブラウザごとのJavaScriptの差を吸収</li>
+        </ul>
+        <p>*デメリットはライブラリの読み込みが必要、ライブラリが大きく動作が遅くなる可能性もある。</p>
+        <div id="message">ここにメッセージが入ります</div>
+        <button id="btn">変更</button>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        //HTMLが読み込まれたら
+        $(document).ready(function(){
+            const message = "jQueryで書き換えたメッセージ";
+            //#btnがクリックされたら
+            $('#btn').on('click',function(){
+                //messageを書き換える
+                $('#message').text(message);
+                //css設定を変更
+                $('#message').css('background-color','#ff0000');
+
+                //複数の条件を書き換える場合
+                //$('#message').css({'background-color':'#ff0000','color':'#fff'});
+                //classを加えることも出来る
+                //$('#message').addClass('alert alert-danger');
+            });
+        });
+    </script>
+</body>
+</html>
