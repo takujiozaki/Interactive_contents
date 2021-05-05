@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>horoscope</title>
+</head>
+<body>
+<div class="container">
+    <h1>horoscope</h1>
+    <div class="d-flex">
+        <label for="mysign">あなたの星座</label>
+        <select name="" id="mysign" class="form-control">
+            <option value="">選択してください</option>
+        </select>
+    </div>
+    <hr>
+    <h2><span id="cuurent"></span>の占い</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="" alt="" id="scopeImg">
+        </div>
+        <div class="col-sm-8">
+            <table class="table">
+                <tr>
+                    <th>星座</th>
+                    <td><span id="dataSign"></span></td>
+                </tr>
+                <tr>
+                    <th>運勢</th>
+                    <td><span id="dataContent"></span></td>
+                </tr>
+                <tr>
+                    <th>ラッキーアイテム</th>
+                    <td><span id="dataItem"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        //星座群
+        const signs = ['牡羊座','牡牛座','双子座','蟹座','獅子座','乙女座','天秤座','蠍座','射手座','山羊座','水瓶座','魚座',];
+        //画像の星座群(名称と同じ並び)
+        const images =['aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarus','capricorn','aquarius','pisces'];
+        //DropDownMenuを生成
+        signs.forEach(function(sign){
+            $("#mysign").append('<option value="'+sign+'">'+sign+'</option>');
+        });
+        //今日の日時を表示
+         const today = new Date()
+        $('#cuurent').text(today.getFullYear()+'年'+(today.getMonth()+1)+'月'+today.getDate()+'日');
+        //星座が選択されたら
+        $("#mysign").on('change',function(){
+            //選択された星座
+            const yourSign = $(this).val();
+            if(yourSign){//星座が空欄出ない時
+                $.getJSON('data.php',function(data) {
+                    //日時を取得
+                    const currentdate = Object.keys(data.horoscope)[0];
+                    //指定日の占いを配列に格納
+                    const horoscopeArr = data.horoscope[currentdate];
+                    const selectedSign = horoscopeArr.filter(function(data){
+                        return data.sign == yourSign;
+                    });
+                    //画面を更新
+                    $('#dataSign').html(selectedSign[0].sign);
+                    $('#dataContent').html(selectedSign[0].content);
+                    $('#dataItem').html(selectedSign[0].item);
+                    $('#scopeImg').attr('src','./images/'+getSignImg(yourSign)+'.png');
+
+                });
+            }else{
+                alert('星座を選択してください');
+            }
+        });
+        //星座名から画像を取得
+        function getSignImg(sign){
+            const index = signs.indexOf(sign);
+            return images[index];
+        }
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
